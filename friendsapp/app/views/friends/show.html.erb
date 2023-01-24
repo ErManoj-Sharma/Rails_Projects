@@ -1,0 +1,8 @@
+
+<div class="h-100 p-5 bg-light border rounded-3">
+<h1> <%= @friend.first_name %>   <%= @friend.last_name %></h1>
+<p class="lead"> <%= @friend.email %> |   <%= @friend.phone %> |  <%= @friend.twitter %></p>
+
+<%= link_to 'Edit', edit_friend_path(@friend),class:"btn btn-secondary" %> &nbsp;
+<%= link_to 'Back', friends_path ,class:"btn btn-dark"%>
+ </div>
