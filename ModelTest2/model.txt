@@ -1,0 +1,28 @@
+rails g model Project project_name:string
+rails g model Issue issue_name:string
+rails g model User name:string
+rails g model ProjectIssue project:references issue:references
+rails g model ProjectUser project:references user:references
+rails g model IssueAssignment issue:references user:references
+
+
+class Issue < ApplicationRecord
+    has_many :project_issues , dependent: :destroy
+    has_many :projects, through: :project_issues , dependent: :destroy
+
+    has_many :issue_assignments , dependent: :destroy
+    has_many :user,through: :issue_assignments , dependent: :destroy
+end
+class Project < ApplicationRecord
+ has_many :project_issues , dependent: :destroy
+ has_many :issues, through: :project_issues , dependent: :destroy
+
+ has_many :project_users , dependent: :destroy
+ has_many :users, through: :project_users , dependent: :destroy
+end
+
+class User < ApplicationRecord
+    has_many :issue_assignments , dependent: :destroy
+    has_many :issues, through: :issue_assignments , dependent: :destroy
+end
+
