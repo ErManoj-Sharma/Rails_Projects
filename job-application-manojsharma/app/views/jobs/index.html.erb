@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1>Jobs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Job title</th>
+      <th>Experience in Years</th>
+      <th>Salary</th>
+      <th>User Id </th>
+      <th>Description </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.job_title %></td>
+        <td><%= job.experience %></td>
+        <td><%= job.salary %></td>
+        <td><%= job.user_id %></td>
+        <td><%= job.description %></td>
+        <td><%= link_to 'Show', job ,class:"btn btn-info"%></td>
+        <td><%= link_to 'Edit', edit_job_path(job) ,class:"btn btn-warning"%></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @jobs , theme:'my_custom_theme'%>
+<br>
+
+<%= link_to 'Back To Home', root_path , class:"btn btn-info"%>

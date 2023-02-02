@@ -1,0 +1,51 @@
+user1:
+  id: 1
+  first_name: 'JobSeeker'
+  last_name: 'User'
+  email: '3@yopmail.com'
+  admin: false
+  address: 'Ongraph technologies jaipur'
+  state: 'Rajasthan'
+  user_role: 'Job Seeker'
+  pincode: '123456'
+  mobile_no: 1234567890
+  city: 'jaipur'
+
+user2:
+  id: 2
+  first_name: 'Employer'
+  last_name: 'User'
+  email: '2@yopmail.com'
+  admin: false
+  address: 'Ongraph technologies jaipur'
+  state: 'Rajasthan'
+  user_role: 'Employer'
+  pincode: '123456'
+  mobile_no: 1234567890
+  city: 'jaipur'
+
+user3:
+  id: 3
+  first_name: 'JobSeeker'
+  last_name: 'User'
+  email: '4@yopmail.com'
+  admin: false
+  address: 'Ongraph technologies jaipur'
+  state: 'Rajasthan'
+  user_role: 'Job Seeker'
+  pincode: '123456'
+  mobile_no: 1234567890
+  city: 'jaipur'
+
+admin:
+  id: 4
+  first_name: 'admin'
+  last_name: 'User'
+  email: 'admin1@yopmail.com'
+  admin: true
+  address: 'Ongraph technologies jaipur'
+  state: 'Rajasthan'
+  user_role: 'Job Seeker'
+  pincode: '123456'
+  mobile_no: 1234567890
+  city: 'jaipur'

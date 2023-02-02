@@ -1,0 +1,40 @@
+<div class="container container-fluid"><%= form_with(model: job) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :job_title %><br />
+    <%= form.text_field :job_title ,class:"form-control"%>
+  </div>
+   <div class="field">
+    <%= form.label :experience %><br />
+    <%= form.number_field :experience ,class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary %><br />
+    <%= form.number_field :salary ,class:"form-control" %>
+  </div>
+    <div class="field">
+    <%= form.label :description %><br />
+    <%= form.text_area :description  ,class:"form-control"%>
+  </div>
+
+ <div class="field"><br />
+    <%= form.hidden_field :user_id, autofocus: true, value:get_user_id(@job)%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div><br>
+<% end %>
+<div>

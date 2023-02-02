@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: admin
+  password: admin
+  host: localhost
+  port: 5432
+
+
+development:
+  <<: *default
+  database: jobapp_development
+
+test:
+  <<: *default
+  database: jobapp_test
+
+production:
+  <<: *default
+  database: jobapp_production
+  username: admin
+  password: <%= ENV['RDS_PASSWORD'] %>
+ 
