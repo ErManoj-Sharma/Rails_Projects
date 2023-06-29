@@ -1,0 +1,6 @@
+<p>
+<%= answer.content %>
+<% if can? :delete ,answer %>
+<%= link_to 'delete',question_answer_path(answer.question,answer),method: :delete %>
+<% end %>
+</p>

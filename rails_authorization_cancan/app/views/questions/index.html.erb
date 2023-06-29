@@ -1,0 +1,27 @@
+<%= flash[:alert] %>
+<%= link_to 'New Question', new_question_path %>
+<% @questions.each do |question| %>
+  <div>
+    <h1> <%= question.content %></h1>
+    <%= time_ago_in_words(question.created_at)%> ago by <%= question.user.email %>
+    
+    <% if can? :update,question %>
+    <%= link_to 'Edit', edit_question_path(question) %>
+    <% end %>
+    
+    <% if can? :destroy ,question %>
+      <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    
+    
+    <% if question.answers.any? %>
+      <h1>Answers</h1>
+      <%= render question.answers %>
+    <% end %>
+    <p> Add a Answer </p>
+    <%= form_for([question,question.answers.build]) do |f|%>
+      <%= f.text_area :content %>
+      <%= submit_tag 'Add'%>
+    <% end %>
+  </div>
+<% end %>
